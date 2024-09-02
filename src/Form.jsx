@@ -9,8 +9,7 @@ export default function Form(){
 
     function handelInputChange(event){
 
-        setFormData((currData)=>{
-
+        setFormData((currData)=>{ 
             return {...currData, [event.target.name] : event.target.value};
         })
     };
