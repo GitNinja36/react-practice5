@@ -25,7 +25,8 @@ export default function CommentsForm({addNewComment}){
         },
         validate,
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+        //   alert(JSON.stringify(values, null, 2));
+          addNewComment(formData);
         },
     });
 
@@ -37,7 +38,7 @@ export default function CommentsForm({addNewComment}){
 
     // function handelSubmit(event){
     //     event.preventDefault();
-    //     addNewComment(formData);
+        // addNewComment(formData);
 
     //     setFormData({
     //         username: "",
