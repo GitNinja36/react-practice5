@@ -1,11 +1,11 @@
 import { useState } from "react"
 
-export default function CommentsForm(){
+export default function CommentsForm({addNewComment}){
     let [formData, setFormData] = useState({
         username: "",
         remarks: "",
-        rating: 5
-    })
+        rating: 5,
+    });
 
     function handelInputChnage(event){
         setFormData((currData)=>{
@@ -14,8 +14,8 @@ export default function CommentsForm(){
     }
 
     function handelSubmit(event){
-        console.log(formData);
         event.preventDefault();
+        addNewComment(formData);
 
         setFormData({
             username: "",
@@ -63,9 +63,8 @@ export default function CommentsForm(){
                     value={formData.rating} 
                     onChange={handelInputChnage}
                 />
-                <br /><br />
-
-                <button>Add commit</button>
+                <br />
+                <button type="submit">Add commit</button>
             </form>
         </div>
     )
